@@ -1,0 +1,7 @@
+{
+  "name": "obfician-client",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
