@@ -10,22 +10,22 @@
 <ion-content no-padding class="has-header">
   <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider1" delegate-handle="slider1" id="obBoard-slider1"
     style="width:100%;height:200px;">
-    <ion-slide id="obBoard-slide24" style="background-color: red; no-repeat center;background-size:cover;"></ion-slide>
-    <ion-slide id="obBoard-slide25" style="background-color: orange; no-repeat center;background-size:cover;"></ion-slide>
-    <ion-slide id="obBoard-slide26" style="background-color: blue; no-repeat center;background-size:cover;"></ion-slide>
+    <ion-slide id="obBoard-slide24" style="background-color: red;background-size:cover;"></ion-slide>
+    <ion-slide id="obBoard-slide25" style="background-color: orange;background-size:cover;"></ion-slide>
+    <ion-slide id="obBoard-slide26" style="background-color: blue;background-size:cover;"></ion-slide>
   </ion-slides>
   <div *ngIf="posts">
     <ion-card no-margin style="width:100%;" *ngFor="let post of posts">
-      <ion-card-header>
-        <ion-card-title style="font-size: 18px;">{{post.title}}</ion-card-title>
+      <ion-card-header (click)="onClickPushPost(post)">
+        <ion-card-title class="post-title">{{post.title}}</ion-card-title>
       </ion-card-header>
-      <img [src]="post.link" style="display: block; width: 100%; height: 250px; margin-left: auto; margin-right: auto;">
-      <ion-card-content style="font-size: 15px; white-space: pre-line;">
-        {{post.description}}
+      <img [src]="post.link" class="post-img">
+      <ion-card-content class="post-content">
+        <span [innerHtml]="seeMore(post)" class="post-content-text"></span>
+        <span class="post-content-more" (click)="onClickPushPost(post)">...more</span>
       </ion-card-content>
     </ion-card>
   </div>
-
   <!-- <ion-list *ngIf="posts">
     <ion-item no-padding style="width:100% !important;" *ngFor="let post of posts">
       <ion-card style="width:100%;">
