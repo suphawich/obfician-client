@@ -4,5 +4,5 @@ export interface Post {
     description: string;
     token: string;
     link: string;
-    created_at: string;
+    created_at: Date;
 }

@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -13,15 +11,20 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PostProvider } from '../providers/post/post';
 import { HttpClientModule } from '@angular/common/http';
 import { PostPage } from '../pages/post/post';
+import { TimelinePage } from '../pages/timeline/timeline';
+import { ShowcasePage } from '../pages/showcase/showcase';
+import { AccountPage } from '../pages/account/account';
+import { ShowcaseProvider } from '../providers/showcase/showcase';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
-    PostPage
+    PostPage,
+    TimelinePage,
+    ShowcasePage,
+    AccountPage
   ],
   imports: [
     BrowserModule,
@@ -31,17 +34,19 @@ import { PostPage } from '../pages/post/post';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
-    PostPage
+    PostPage,
+    TimelinePage,
+    ShowcasePage,
+    AccountPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PostProvider
+    PostProvider,
+    ShowcaseProvider
   ]
 })
 export class AppModule {}

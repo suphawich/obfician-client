@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Post } from '../../models/Post';
+import moment from 'moment';
 
 /**
  * Generated class for the PostPage page.
@@ -25,4 +26,9 @@ export class PostPage {
     this.post = this.navParams.get("post")
   }
 
+  getDiffTime(post) {
+    let m = moment(post.created_at);
+    let strDiff = m.fromNow()
+    return strDiff;
+  }
 }

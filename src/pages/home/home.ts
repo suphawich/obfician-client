@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 import { PostProvider } from '../../providers/post/post';
 import { Post } from '../../models/Post';
 import { PostPage } from '../post/post';
+import moment from 'moment';
+
 
 @Component({
   selector: 'page-home',
@@ -18,6 +20,11 @@ export class HomePage {
   ionViewDidLoad() {
     this.provider.posts().subscribe(result => {
       this.posts = result.data
+      this.posts.map(post => {
+        post.created_at = new Date(post.created_at)
+        return post
+      })
+      console.log(this.posts)
     })
   }
 
@@ -46,10 +53,17 @@ export class HomePage {
     }
     return post.description;
   }
+
   hasMore(post, maxTextLength):boolean {
     if (post.description.length > maxTextLength) {
       return true
     }
     return false
+  }
+
+  getDiffTime(post) {
+    let m = moment(post.created_at);
+    let strDiff = m.fromNow()
+    return strDiff;
   }
 }
