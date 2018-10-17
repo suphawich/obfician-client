@@ -15,6 +15,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AccountPage {
 
+  mUsername = ""
+  mPassword = ""
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

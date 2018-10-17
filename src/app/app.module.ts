@@ -15,6 +15,7 @@ import { TimelinePage } from '../pages/timeline/timeline';
 import { ShowcasePage } from '../pages/showcase/showcase';
 import { AccountPage } from '../pages/account/account';
 import { ShowcaseProvider } from '../providers/showcase/showcase';
+import { ItemPage } from '../pages/item/item';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ShowcaseProvider } from '../providers/showcase/showcase';
     PostPage,
     TimelinePage,
     ShowcasePage,
-    AccountPage
+    AccountPage,
+    ItemPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { ShowcaseProvider } from '../providers/showcase/showcase';
     PostPage,
     TimelinePage,
     ShowcasePage,
-    AccountPage
+    AccountPage,
+    ItemPage
   ],
   providers: [
     StatusBar,

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { Item } from '../../models/Item';
 import { ShowcaseProvider } from '../../providers/showcase/showcase';
+import { ItemPage } from '../item/item';
 
 /**
  * Generated class for the ShowcasePage page.
@@ -19,6 +20,7 @@ export class ShowcasePage {
 
   items:Item[]
   constructor(public navCtrl: NavController,
+              public modalCtrl: ModalController,
               public provider: ShowcaseProvider) {
   }
 
@@ -28,6 +30,11 @@ export class ShowcasePage {
       this.items = result.data
       console.log(this.items[0].description)
     })
+  }
+
+  presentItemModal(item) {
+    let itemModal = this.modalCtrl.create(ItemPage, { item: item });
+    itemModal.present();
   }
 
 }
