@@ -17,6 +17,7 @@ export class PostProvider {
   }
 
   posts():Observable<PostResponse> {
-    return this.http.get<PostResponse>("http://localhost:8000/api/posts")
+    let url = "http://ofc.suphawich.science/api/posts";
+    return this.http.get<PostResponse>(url)
   }
 }

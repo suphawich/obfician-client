@@ -28,7 +28,6 @@ export class ShowcasePage {
     console.log('ionViewDidLoad ShowcasePage');
     this.provider.items().subscribe(result => {
       this.items = result.data
-      console.log(this.items[0].description)
     })
   }
 

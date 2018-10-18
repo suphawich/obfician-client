@@ -5,11 +5,16 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>timeline</ion-title>
+    <ion-list no-margin>
+      <ion-item>
+        <ion-title>Timeline</ion-title>
+        <ion-avatar item-end (click)="presentAboutModal()">
+          <img src="assets/imgs/noey_logo.jpg">
+        </ion-avatar>
+      </ion-item>
+    </ion-list>
   </ion-navbar>
-
 </ion-header>
 
 

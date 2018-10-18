@@ -17,6 +17,7 @@ export class ShowcaseProvider {
   }
 
   items():Observable<ShowcaseResponse> {
-    return this.http.get<ShowcaseResponse>("http://localhost:8000/api/items")
+    let url = "http://ofc.suphawich.science/api/items"
+    return this.http.get<ShowcaseResponse>(url)
   }
 }

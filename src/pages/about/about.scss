@@ -1,0 +1,29 @@
+// page-about {
+
+// }
+
+.profile-content {
+    transition: width 2s;
+}
+
+.li-profile {
+    list-style-type: none;
+}
+
+.ul-profile {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sp-profile-label {
+    width: 40%;
+    display: inline-block;
+    position: absolute;
+}
+
+.sp-profile-value {
+    margin-left: 40%;
+    width: 60% !important;
+    display: inline-block;
+    white-space: normal;
+}

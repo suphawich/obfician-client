@@ -4,9 +4,6 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding="false">
-</ion-content>
-
 <ion-content no-padding class="has-header">
   <!-- <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider1" delegate-handle="slider1" id="obBoard-slider1"
     style="width:100%;height:200px;">
@@ -14,7 +11,7 @@
     <ion-slide id="obBoard-slide25" style="background-color: orange; background-size:cover;"></ion-slide>
     <ion-slide id="obBoard-slide26" style="background-color: blue; background-size:cover;"></ion-slide>
   </ion-slides> -->
-  <ion-grid no-padding>
+  <!-- <ion-grid no-padding>
     <ion-row *ngIf="posts">
       <ion-col col-xl-2></ion-col>
       <ion-col col-12 col-md-4 col-xl-5>
@@ -33,8 +30,8 @@
       </ion-col>
       <ion-col col-xl-2></ion-col>
     </ion-row>
-  </ion-grid>
-  <!-- <div *ngIf="posts">
+  </ion-grid> -->
+  <div *ngIf="posts">
     <ion-card no-margin style="width:100%;" *ngFor="let post of posts">
       <ion-card-header (click)="onClickPushPost(post)">
         <ion-card-title class="post-title">{{post.title}}</ion-card-title>
@@ -47,7 +44,7 @@
         <span [innerHtml]="getDiffTime(post)" class="post-content-time"></span>
       </ion-card-content>
     </ion-card>
-  </div> -->
+  </div>
   <!-- <ion-list *ngIf="posts">
     <ion-item no-padding style="width:100% !important;" *ngFor="let post of posts">
       <ion-card style="width:100%;">

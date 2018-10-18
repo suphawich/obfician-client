@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>About Noey</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content no-padding>
+  <img src="assets/imgs/noey_about_cover.jpg">
+  <ion-list no-margin no-lines>
+    <ion-item text-wrap *ngIf="text_about">
+      <span [innerHtml]="text_about"></span>
+    </ion-item>
+    <ion-item>
+      <ion-card (click)="onClickProfile()">
+        <ion-card-header>
+          <span>Noey's Profile</span>
+          <ion-icon name="arrow-dropdown" style="float: right" *ngIf="isSelectProfile"></ion-icon>
+          <ion-icon name="arrow-dropright" style="float: right" *ngIf="!isSelectProfile"></ion-icon>
+        </ion-card-header>
+        <ion-card-content class="profile-content" *ngIf="isSelectProfile" [@profile-animation]>
+          <ul class="ul-profile" *ngIf="profiles">
+            <li class="li-profile" *ngFor="let profile of profiles">
+              <span class="sp-profile-label">{{profile.label}}</span>
+              <span class="sp-profile-value">{{profile.value}}</span>
+            </li>
+          </ul>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item text-wrap *ngIf="text_fact">
+      <span [innerHtml]="text_fact"></span>
+    </ion-item>
+  </ion-list>
+</ion-content>

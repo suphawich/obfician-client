@@ -1,4 +1,5 @@
 import { NgModule, ErrorHandler } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -16,6 +17,7 @@ import { ShowcasePage } from '../pages/showcase/showcase';
 import { AccountPage } from '../pages/account/account';
 import { ShowcaseProvider } from '../providers/showcase/showcase';
 import { ItemPage } from '../pages/item/item';
+import { AboutPage } from '../pages/about/about';
 
 @NgModule({
   declarations: [
@@ -26,11 +28,13 @@ import { ItemPage } from '../pages/item/item';
     TimelinePage,
     ShowcasePage,
     AccountPage,
-    ItemPage
+    ItemPage,
+    AboutPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -42,7 +46,8 @@ import { ItemPage } from '../pages/item/item';
     TimelinePage,
     ShowcasePage,
     AccountPage,
-    ItemPage
+    ItemPage,
+    AboutPage
   ],
   providers: [
     StatusBar,
